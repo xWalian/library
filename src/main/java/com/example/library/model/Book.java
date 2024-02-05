@@ -10,10 +10,10 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
-    private String title;
-    private String author;
+    public String title;
+    public String author;
 
     // Getters and setters
 }
