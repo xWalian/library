@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:include="navbar.html">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Library</title>
-
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
 </head>
 <body>
 
-
+<nav>
+  <ul>
+    <li><a th:href="@{/books/list}">Book List</a></li>
+    <!-- Dodaj inne elementy nawigacji, jeśli są potrzebne -->
+  </ul>
+</nav>
 
 </body>
 </html>

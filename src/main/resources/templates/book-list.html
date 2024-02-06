@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:include="navbar">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
 </head>
 <body>
-
+<div th:replace="~{index :: nav}"></div>
 <h2>Book List</h2>
-<div id="content">
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Publisher</th>
-            <th>Publication Year</th>
-            <th>Quantity</th>
-            <th>Actions</th>
-        </tr>
-        <tr th:each="book : ${books}">
-            <td th:text="${book.id}"></td>
-            <td th:text="${book.title}"></td>
-            <td th:text="${book.author}"></td>
-            <td th:text="${book.publisher}"></td>
-            <td th:text="${book.publication_Year}"></td>
-            <td th:text="${book.quantity}"></td>
-            <td>
-                <a th:href="@{/books/showFormForUpdate(bookId=${book.id})}">Edit</a>
-                <a th:href="@{/books/delete(bookId=${book.id})}">Delete</a>
-            </td>
-        </tr>
-    </table>
 
-    <a th:href="@{/books/showFormForAdd}">Add New Book</a>
-</div>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Publication Year</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.publisher}"></td>
+        <td th:text="${book.publication_Year}"></td>
+        <td th:text="${book.quantity}"></td>
+        <td>
+            <a th:href="@{/books/showFormForUpdate(bookId=${book.id})}">Edit</a>
+            <a th:href="@{/books/delete(bookId=${book.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
 
+<a th:href="@{/books/showFormForAdd}">Add New Book</a>
 
 
 </body>

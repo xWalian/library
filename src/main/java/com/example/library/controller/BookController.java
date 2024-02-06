@@ -5,6 +5,7 @@ import com.example.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,7 +32,10 @@ public class BookController {
     }
 
     @PostMapping("/saveBook")
-    public String saveBook(@ModelAttribute("book") Book book) {
+    public String saveBook(@ModelAttribute("book") Book book, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "book-form";
+        }
         bookService.saveBook(book);
         return "redirect:/books/list";
     }
