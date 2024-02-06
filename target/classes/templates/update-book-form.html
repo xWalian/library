@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Book</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div th:replace="~{index :: nav}"></div>
+
+<h2>Edit Book</h2>
+
+<form action="/books/saveBook" method="post" th:object="${book}">
+    <input type="hidden" th:field="*{id}">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" th:field="*{title}" required>
+
+    </br>
+
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" th:field="*{author}" required>
+
+    </br>
+
+    <label for="publisher">Publisher:</label>
+    <input type="text" id="publisher" name="publisher" th:field="*{publisher}" required>
+
+    </br>
+
+    <label for="publicationYear">Publication Year:</label>
+    <input type="number" id="publicationYear" name="publicationYear" th:field="*{publicationYear}" required>
+
+    </br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" th:field="*{quantity}" required>
+
+    </br>
+
+    <button type="submit">Save Changes</button>
+</form>
+<script>
+    function validateForm() {
+        // Custom validation logic, you can add more conditions as needed
+        var title = document.getElementById("title").value;
+        var author = document.getElementById("author").value;
+        var publisher = document.getElementById("publisher").value;
+        var publicationYear = document.getElementById("publicationYear").value;
+        var quantity = document.getElementById("quantity").value;
+
+        if (title === "" || author === "" || publisher === "" || publicationYear === "" || quantity === "") {
+            alert("All fields must be filled out");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+
+</body>
+</html>
