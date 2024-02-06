@@ -35,9 +35,32 @@ public class Book {
     }
 
     public String author;
+    public String publisher;
+    public int publication_Year;
+    public int quantity;
 
     // Getters and setters
     public Long getId() {
         return id;
+    }
+
+    public String getPublisher(){ return publisher;}
+
+    public void setPublisher(String publisher){this.publisher = publisher;}
+
+    public int getPublication_Year() {
+        return publication_Year;
+    }
+
+    public void setPublication_Year(int publication_Year) {
+        this.publication_Year = publication_Year;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quanity) {
+        this.quantity = quanity;
     }
 }
