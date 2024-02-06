@@ -2,7 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     background-color: #AAAAAA;
+=======
+    background-color: #f4f4f4;
+>>>>>>> origin/main
 }
 
 nav {
@@ -32,4 +36,13 @@ a {
 
 a:hover {
     background-color: #555;
+<<<<<<< HEAD
+=======
+}
+
+h1{
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 30px;
+>>>>>>> origin/main
 }
