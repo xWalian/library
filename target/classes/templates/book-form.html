@@ -35,7 +35,7 @@
 
     </br>
 
-    <button type="submit">Add Book</button>
+    <button onClick="validateForm()" type="submit">Add Book</button>
 </form>
 <script>
     function validateForm() {
@@ -48,6 +48,15 @@
 
         if (title === "" || author === "" || publisher === "" || publicationYear === "" || quantity === "") {
             alert("All fields must be filled out");
+            return false;
+        }
+        if (quantity <= 0){
+            alert("quantity must be greater than 0")
+            return false;
+        }
+        if (publicationYear <= 0){
+            alert("" +
+                "Publication Year must be greater than 0")
             return false;
         }
 
