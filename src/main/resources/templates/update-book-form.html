@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Book Form</title>
+    <title>Edit Book</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
 <div th:replace="~{index :: nav}"></div>
 
-<h2>Book Form</h2>
+<h2>Edit Book</h2>
 
 <form action="/books/saveBook" method="post" th:object="${book}">
+    <input type="hidden" th:field="*{id}">
+
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" th:field="*{title}" required>
 
@@ -35,7 +37,7 @@
 
     </br>
 
-    <button type="submit">Add Book</button>
+    <button type="submit">Save Changes</button>
 </form>
 <script>
     function validateForm() {

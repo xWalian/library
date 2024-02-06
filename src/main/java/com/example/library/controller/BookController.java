@@ -44,7 +44,7 @@ public class BookController {
     public String showFormForUpdate(@RequestParam("bookId") Long id, Model model) {
         Book book = bookService.getBookById(id);
         model.addAttribute("book", book);
-        return "book-form";
+        return "update-book-form";
     }
 
     @GetMapping("/delete")
