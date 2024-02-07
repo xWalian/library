@@ -1,13 +1,15 @@
 package com.example.library.controller;
 
-import security.JwtTokenProvider;
 import com.example.library.model.Book;
-import com.example.library.service.BookService;
+import com.example.library.services.BookService;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+
 import java.util.List;
 
 
@@ -17,7 +19,7 @@ public class BookController {
 
     @Autowired
     private BookService bookService;
-    private JwtTokenProvider jwtTokenProvider;
+
     @GetMapping("/list")
     public String listBooks(Model model) {
         List<Book> books = bookService.getAllBooks();
@@ -40,7 +42,6 @@ public class BookController {
         bookService.saveBook(book);
         return "redirect:/books/list";
     }
-
     @GetMapping("/showFormForUpdate")
     public String showFormForUpdate(@RequestParam("bookId") Long id, Model model) {
         Book book = bookService.getBookById(id);
