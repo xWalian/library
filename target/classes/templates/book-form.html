@@ -35,35 +35,8 @@
 
     </br>
 
-    <button onClick="validateForm()" type="submit">Add Book</button>
+    <button  type="submit">Add Book</button>
 </form>
-<script>
-    function validateForm() {
-        // Custom validation logic, you can add more conditions as needed
-        var title = document.getElementById("title").value;
-        var author = document.getElementById("author").value;
-        var publisher = document.getElementById("publisher").value;
-        var publicationYear = document.getElementById("publicationYear").value;
-        var quantity = document.getElementById("quantity").value;
-
-        if (title === "" || author === "" || publisher === "" || publicationYear === "" || quantity === "") {
-            alert("All fields must be filled out");
-            return false;
-        }
-        if (quantity <= 0){
-            alert("quantity must be greater than 0")
-            return false;
-        }
-        if (publicationYear <= 0){
-            alert("" +
-                "Publication Year must be greater than 0")
-            return false;
-        }
-
-        return true;
-    }
-</script>
-
 
 </body>
 </html>

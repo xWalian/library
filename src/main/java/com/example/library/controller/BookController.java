@@ -1,5 +1,6 @@
 package com.example.library.controller;
 
+import security.JwtTokenProvider;
 import com.example.library.model.Book;
 import com.example.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 
 @Controller
 @RequestMapping("/books")
@@ -16,7 +17,7 @@ public class BookController {
 
     @Autowired
     private BookService bookService;
-
+    private JwtTokenProvider jwtTokenProvider;
     @GetMapping("/list")
     public String listBooks(Model model) {
         List<Book> books = bookService.getAllBooks();
